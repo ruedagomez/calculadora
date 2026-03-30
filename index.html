@@ -2,7 +2,10 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0a0c10">
 <title>Racing C. Portuense · Escenarios de ascenso</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
@@ -22,7 +25,7 @@
   --serif:'Instrument Serif',Georgia,serif;
 }
 html{font-family:var(--font);background:var(--bg);color:var(--text);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
-body{max-width:900px;margin:0 auto;padding:24px 20px 80px}
+body{max-width:900px;margin:0 auto;padding:24px 20px 80px;padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right));padding-bottom:max(80px,env(safe-area-inset-bottom))}
 
 .hero{padding:48px 0 40px;border-bottom:1px solid var(--border)}
 .hero-top{display:flex;align-items:center;gap:20px;margin-bottom:20px}
@@ -120,14 +123,76 @@ tbody tr:hover{background:var(--surface)}
 @keyframes fadeUp{to{opacity:1;transform:none}}
 
 @media(max-width:600px){
-  body{padding:16px 14px 60px}
-  .hero{padding:32px 0 28px}
-  .hero-badge{width:56px;height:56px}
+  html{font-size:14px}
+  body{padding:12px 14px 60px}
+  .hero{padding:24px 0 20px}
+  .hero-top{gap:14px;margin-bottom:14px}
+  .hero-badge{width:52px;height:52px}
+  .hero-eyebrow{font-size:10px;letter-spacing:2px;margin-bottom:8px}
+  .hero h1{font-size:28px;margin-bottom:8px}
+  .hero-sub{font-size:13px}
+  .hero-stats{gap:8px;margin-top:16px}
+  .hero-stat{min-width:0;flex:1;padding:10px 12px;text-align:center}
+  .hero-stat .val{font-size:18px}
+  .hero-stat .lbl{font-size:9px;letter-spacing:.5px}
+  section{padding:28px 0}
+  .sec-label{font-size:10px;margin-bottom:6px}
+  .sec-title{font-size:20px;margin-bottom:14px}
+  .table-wrap{margin:0 -14px;padding:0 14px}
+  table{font-size:12px}
+  thead th{padding:8px 5px;font-size:9px;letter-spacing:1px}
+  tbody td{padding:10px 5px}
+  .pts{font-size:14px}
+  .prob-val{font-size:12px;min-width:38px}
+  .prob-track{height:5px}
+  .ga-grid{grid-template-columns:1fr;gap:8px}
+  .ga-card{padding:14px 14px}
+  .ga-pair{font-size:9px;margin-bottom:8px}
+  .ga-result{font-size:13px}
+  .ga-detail{font-size:11px}
+  .ga-note{font-size:10px}
+  .matrix-legend{gap:12px;margin-bottom:12px;font-size:11px}
+  .matrix-grid{gap:10px}
+  .scenario-header{padding:12px 14px;font-size:12px}
+  .scenario-header .tag{font-size:9px;padding:2px 6px}
   .scenario-cells{grid-template-columns:1fr}
-  .scenario-cell{border-right:none;border-bottom:1px solid var(--border)}
+  .scenario-cell{border-right:none;border-bottom:1px solid var(--border);padding:14px 14px}
   .scenario-cell:last-child{border-bottom:none}
-  .ga-grid{grid-template-columns:1fr}
-  .match{padding:12px 14px}
+  .sc-label{font-size:9px;margin-bottom:8px}
+  .sc-bar-label{font-size:10px}
+  .sc-bar-track{height:7px}
+  .sc-bar-val{font-size:11px;min-width:30px}
+  .matches{gap:8px}
+  .match{padding:12px 12px;gap:10px}
+  .match-jornada{font-size:10px;min-width:28px}
+  .match-teams{font-size:13px;gap:8px;min-width:0}
+  .match-vs{font-size:9px;padding:2px 8px}
+  .match-note{font-size:10px}
+  .ideal{padding:18px 16px}
+  .ideal-title{font-size:14px;margin-bottom:12px}
+  .ideal-steps{gap:8px}
+  .ideal-step{gap:10px;font-size:13px}
+  .step-num{min-width:24px;height:24px;font-size:10px}
+  .paradox{padding:14px 16px;margin-top:16px}
+  .paradox-title{font-size:12px}
+  .paradox-text{font-size:12px}
+  .pf-grid{grid-template-columns:1fr;gap:8px}
+  .pf-card{padding:12px 14px}
+  .pf-name{font-size:14px}
+  .pf-pts{font-size:11px}
+  footer{font-size:10px}
+}
+@media(max-width:380px){
+  html{font-size:13px}
+  .hero h1{font-size:24px}
+  .hero-badge{width:44px;height:44px}
+  .hero-stat{padding:8px 8px}
+  .hero-stat .val{font-size:16px}
+  table{font-size:11px}
+  thead th{padding:6px 4px;font-size:8px}
+  tbody td{padding:8px 4px}
+  .match-teams{font-size:12px}
+  .ideal-step{font-size:12px}
 }
 </style>
 </head>
