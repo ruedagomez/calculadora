@@ -258,9 +258,9 @@ tbody tr:hover{background:var(--surface)}
     </div>
     <div class="ga-card">
       <div class="ga-pair">Racing vs Egabrense</div>
-      <div class="ga-status"><div class="ga-dot" style="background:var(--amber)"></div><div class="ga-result">Egabrense lidera 3–0</div></div>
-      <div class="ga-detail">Falta J29 en casa de Racing<br>J14: Egabrense 2–1 Racing (GD: Egab +1, Racing –1)</div>
-      <div class="ga-note" style="background:var(--amber-dim);color:var(--amber)">Racing necesita ganar J29 por ≥2 goles para voltear el GA (ganar 1–0 no basta)</div>
+      <div class="ga-status"><div class="ga-dot" style="background:var(--green)"></div><div class="ga-result">GA irrelevante si Racing gana J29</div></div>
+      <div class="ga-detail">J14: Egabrense 2–1 Racing · J29 pendiente<br>Si Racing gana J29 → mínimo 61 pts · Egabrense máximo 59 pts</div>
+      <div class="ga-note" style="background:var(--green-dim);color:var(--green)">Con solo 3 pts en juego, Egabrense no puede alcanzar a Racing. El GA no entra en juego.</div>
     </div>
     <div class="ga-card">
       <div class="ga-pair">Montilla vs Egabrense</div>
@@ -275,7 +275,7 @@ tbody tr:hover{background:var(--surface)}
 <section class="fade-in" style="animation-delay:.2s">
   <div class="sec-label">03 · Escenarios</div>
   <div class="sec-title">Quién es 2º según resultados de J29 y J30</div>
-  <p style="font-size:13px;color:var(--text2);margin:-12px 0 20px">Cada fila es un resultado de J29 (Racing vs Egabrense). Dentro, las 3 opciones de J30 para Racing (Cádiz) y sus implicaciones. La barra más larga = mayor probabilidad de ser 2º.</p>
+ sultado de J29 (Racing vs Egabrense). Dentro, las 3 opciones de J30 (Racing en Cádiz). Si Racing gana J29, Egabrense queda eliminado matemáticamente. La barra más larga = mayor probabilidad de ser 2º.</p>
   <div class="matrix-legend">
     <span><div class="ml-dot" style="background:var(--rac)"></div> Racing</span>
     <span><div class="ml-dot" style="background:#8a8fa0"></div> Montilla</span>
@@ -332,8 +332,8 @@ tbody tr:hover{background:var(--surface)}
 <!-- ESCENARIO IDEAL -->
 <section class="fade-in" style="animation-delay:.3s">
   <div class="paradox">
-    <div class="paradox-title">⚠️ Clave táctica: el margen importa</div>
-    <div class="paradox-text">En J29 no basta con ganar. Racing viene de perder 2–1 en J14, por lo que lleva GD de –1 en la serie. Ganar 1–0 deja a Egabrense con mejor diferencia de goles cara a cara (+1 vs 0). <strong style="color:var(--text)">Necesita ganar por ≥2 goles para asegurarse el GA</strong>, aunque cualquier victoria le da 61 pts y mantiene opciones sólidas de ascenso.</div>
+    <div class="paradox-title">Clave táctica: J29 es todo</div>
+    <div class="paradox-text">Ganar J29 elimina a Egabrense matemáticamente (Racing 61 pts, Egabrense máximo 59). Solo quedaría Montilla como rival. Ganar también J30 significa ascenso directo garantizado independientemente de lo que haga Montilla. <strong style="color:var(--text)">Dos victorias = ascenso matemático.</strong></div>
   </div>
   <div class="sec-label">05 · Estrategia</div>
   <div class="sec-title">El camino de Racing al ascenso</div>
@@ -353,12 +353,11 @@ tbody tr:hover{background:var(--surface)}
       </div>
       <div class="ideal-step">
         <div class="step-num">3</div>
-        <div>Ganar a Egabrense en casa (J29) por ≥2 goles → <strong>61 pts + voltea goal average</strong> <span style="color:var(--text2);font-size:13px">· Ganar 1-0 no basta: Egabrense mantiene mejor GD en la serie</span></div>
+        <div>Ganar a Egabrense en casa (J29) → <strong>61 pts · Egabrense eliminado de la lucha</strong> <span style="color:var(--text2);font-size:13px">· Con solo J30 restante, Egabrense no puede alcanzarnos (máximo 59 pts)</span></div>
       </div>
       <div class="ideal-step">
         <div class="step-num">4</div>
-        <div>Ganar en Cádiz CFC (J30) → <strong>64 pts · ascenso directo</strong> <span style="color:var(--text2);font-size:13px">· Solo falla si Montilla hace pleno (incluye ganar al Betis C)</span></div>
-      </div>
+        <div>Ganar en Cádiz CFC (J30) → <strong>64 pts · ASCENSO DIRECTO</strong> <span style="color:var(--text2);font-size:13px">· Montilla no puede alcanzar los 64 pts (máximo 62). Ascenso matemático.</span></div>
     </div>
 </section>
 
@@ -404,7 +403,7 @@ tbody tr:hover{background:var(--surface)}
 const scenarios = [
   {
     label: 'Racing gana J29 (vs Egabrense)',
-    tag: 'Mejor escenario · 93% Racing',
+    tag: 'Egabrense eliminado · 93% Racing',
     tagColor: 'var(--rac)',
     tagBg: 'var(--rac-dim)',
     cells: [
