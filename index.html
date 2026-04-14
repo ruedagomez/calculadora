@@ -211,6 +211,7 @@ tbody tr:hover{background:var(--surface)}
     <div class="hero-stat"><div class="val" style="color:var(--rac)">55,6%</div><div class="lbl">Racing 2ª plaza</div></div>
     <div class="hero-stat"><div class="val">243</div><div class="lbl">Combinaciones</div></div>
     <div class="hero-stat"><div class="val">2</div><div class="lbl">Jornadas</div></div>
+  </div>
 </header>
 
 <!-- CLASIFICACIÓN -->
@@ -230,10 +231,12 @@ tbody tr:hover{background:var(--surface)}
       <tr>
         <td><span class="pos pos-2">2</span></td><td class="team-rac">Racing C. Portuense</td><td class="c">28</td><td class="pts" style="color:var(--rac)">58</td><td class="c">2</td><td class="c" style="color:var(--text3)">64</td>
         <td><div class="prob-bar"><div class="prob-track"><div class="prob-fill" style="width:55.6%;background:var(--rac)"></div></div><div class="prob-val" style="color:var(--rac)">55,6%</div></div></td>
+      </tr>
       <tr>
         <td><span class="pos pos-3">3</span></td><td style="font-weight:600">Montilla CF</td><td class="c">28</td><td class="pts">56</td><td class="c">2</td><td class="c" style="color:var(--text3)">62</td>
         <td><div class="prob-bar"><div class="prob-track"><div class="prob-fill" style="width:15.2%;background:var(--mont)"></div></div><div class="prob-val" style="color:var(--mont)">15,2%</div></div></td>
-        
+      </tr>
+      <tr>
         <td><span class="pos pos-4">4</span></td><td style="font-weight:600">Egabrense CD</td><td class="c">28</td><td class="pts">56</td><td class="c">2</td><td class="c" style="color:var(--text3)">62</td>
         <td><div class="prob-bar"><div class="prob-track"><div class="prob-fill" style="width:29.2%;background:var(--coral)"></div></div><div class="prob-val" style="color:var(--coral)">29,2%</div></div></td>
       </tr>
@@ -256,8 +259,8 @@ tbody tr:hover{background:var(--surface)}
     <div class="ga-card">
       <div class="ga-pair">Racing vs Egabrense</div>
       <div class="ga-status"><div class="ga-dot" style="background:var(--amber)"></div><div class="ga-result">Egabrense lidera 3–0</div></div>
-      <div class="ga-detail">Falta J29 en casa de Racing<br>J14: Egabrense 2–1 Racing</div>
-      <div class="ga-note" style="background:var(--amber-dim);color:var(--amber)">Victoria de Racing en J29 iguala a 3–3 → decide diferencia de goles</div>
+      <div class="ga-detail">Falta J29 en casa de Racing<br>J14: Egabrense 2–1 Racing (GD: Egab +1, Racing –1)</div>
+      <div class="ga-note" style="background:var(--amber-dim);color:var(--amber)">Racing necesita ganar J29 por ≥2 goles para voltear el GA (ganar 1–0 no basta)</div>
     </div>
     <div class="ga-card">
       <div class="ga-pair">Montilla vs Egabrense</div>
@@ -328,6 +331,10 @@ tbody tr:hover{background:var(--surface)}
 
 <!-- ESCENARIO IDEAL -->
 <section class="fade-in" style="animation-delay:.3s">
+  <div class="paradox">
+    <div class="paradox-title">⚠️ Clave táctica: el margen importa</div>
+    <div class="paradox-text">En J29 no basta con ganar. Racing viene de perder 2–1 en J14, por lo que lleva GD de –1 en la serie. Ganar 1–0 deja a Egabrense con mejor diferencia de goles cara a cara (+1 vs 0). <strong style="color:var(--text)">Necesita ganar por ≥2 goles para asegurarse el GA</strong>, aunque cualquier victoria le da 61 pts y mantiene opciones sólidas de ascenso.</div>
+  </div>
   <div class="sec-label">05 · Estrategia</div>
   <div class="sec-title">El camino de Racing al ascenso</div>
   <div class="ideal">
@@ -346,7 +353,7 @@ tbody tr:hover{background:var(--surface)}
       </div>
       <div class="ideal-step">
         <div class="step-num">3</div>
-        <div>Ganar a Egabrense en casa (J29) → <strong>61 pts + iguala goal average</strong> <span style="color:var(--text2);font-size:13px">· El partido que lo decide todo</span></div>
+        <div>Ganar a Egabrense en casa (J29) por ≥2 goles → <strong>61 pts + voltea goal average</strong> <span style="color:var(--text2);font-size:13px">· Ganar 1-0 no basta: Egabrense mantiene mejor GD en la serie</span></div>
       </div>
       <div class="ideal-step">
         <div class="step-num">4</div>
@@ -397,35 +404,35 @@ tbody tr:hover{background:var(--surface)}
 const scenarios = [
   {
     label: 'Racing gana J29 (vs Egabrense)',
-    tag: 'Mejor escenario',
+    tag: 'Mejor escenario · 93% Racing',
     tagColor: 'var(--rac)',
     tagBg: 'var(--rac-dim)',
     cells: [
       { label: 'Racing gana J30', r: 100, m: 0, e: 0 },
-      { label: 'Empate J30', r: 88, m: 11, e: 0 },
-      { label: 'Racing pierde J30', r: 88, m: 11, e: 0 }
+      { label: 'Empate J30', r: 89, m: 11, e: 0 },
+      { label: 'Racing pierde J30', r: 89, m: 11, e: 0 }
     ]
   },
   {
     label: 'Empate J29',
-    tag: 'Escenario medio',
+    tag: 'Escenario medio · 54% Racing',
     tagColor: 'var(--text2)',
     tagBg: 'var(--surface3)',
     cells: [
-      { label: 'Racing gana J30', r: 88, m: 11, e: 0 },
-      { label: 'Empate J30', r: 44, m: 33, e: 22 },
-      { label: 'Racing pierde J30', r: 29, m: 40, e: 29 }
+      { label: 'Racing gana J30', r: 89, m: 11, e: 0 },
+      { label: 'Empate J30', r: 44, m: 26, e: 30 },
+      { label: 'Racing pierde J30', r: 30, m: 41, e: 30 }
     ]
   },
   {
     label: 'Egabrense gana J29',
-    tag: 'Escenario adverso',
+    tag: 'Escenario adverso · 20% Racing',
     tagColor: 'var(--red)',
     tagBg: 'var(--red-dim)',
     cells: [
       { label: 'Racing gana J30', r: 59, m: 7, e: 33 },
-      { label: 'Empate J30', r: 0, m: 14, e: 85 },
-      { label: 'Racing pierde J30', r: 0, m: 14, e: 85 }
+      { label: 'Empate J30', r: 0, m: 15, e: 85 },
+      { label: 'Racing pierde J30', r: 0, m: 15, e: 85 }
     ]
   }
 ];
